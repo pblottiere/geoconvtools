@@ -5,7 +5,7 @@ Various tools for geodata conversion.
 Note that its not fully plug-and-play. Do not be afraid to do some of the dirty
 work.
 
-## hgt2png
+### hgt2png
 
 Convert a hgt file (https://dds.cr.usgs.gov/srtm/) to a DEM raster (or
 just display it).
@@ -28,7 +28,7 @@ And finally to retrieve the bounding box:
 > gdalinfo hgt_2154.png
 ```
 
-## bin2las
+### bin2las
 
 Convert N binary files of pointcloud data into 1 LAS file thanks to the PDAL
 API. By default, the schema is XYZI where each dimension is encoded as float32
@@ -56,4 +56,16 @@ Then you can check your LAS file with the *lasinfo* tool:
 
 ``` bash
 > lasinfo result.las
+```
+
+### las2pg
+
+Fill a database with pointcloud data coming from a LAS file. The pgwriter from
+PDAL is used.
+
+Firt edit *las2pg.sh* to update the database name and then edit *pipe.jon* in
+order to update the database and the name of the las file. Then:
+
+``` bash
+> sh las2pg.sh
 ```

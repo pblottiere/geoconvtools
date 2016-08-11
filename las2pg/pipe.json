@@ -1,0 +1,22 @@
+{
+  "pipeline":[
+    {
+      "type":"readers.las",
+      "filename":"file.las",
+      "spatialreference":"EPSG:32616"
+    },
+    {
+      "type":"filters.chipper",
+      "capacity":400
+    },
+    {
+      "type":"filters.midoc"
+    },
+    {
+      "type":"writers.pgpointcloud",
+      "connection":"host=127.0.0.1 dbname=dataset user=blottiere",
+      "table":"patchs",
+      "srid":"32616"
+    }
+  ]
+}
