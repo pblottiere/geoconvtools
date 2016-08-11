@@ -2,7 +2,7 @@
 
 Various tools for geodata conversion.
 
-Note that its not fully plug-and-play. Do not be afraid to do some of the dirty
+Note that it's not fully plug-and-play. Do not be afraid to do some of the dirty
 work.
 
 ### hgt2png
