@@ -63,8 +63,8 @@ Then you can check your LAS file with the *lasinfo* tool:
 Fill a database with pointcloud data coming from a LAS file. The pgwriter from
 PDAL is used.
 
-Firt edit *las2pg.sh* to update the database name and then edit *pipe.jon* in
-order to update the database and the name of the las file. Then:
+First edit *las2pg.sh* to update the database name and then edit *pipe.jon* in
+order to update the database and the name of the LAS file. Then:
 
 ``` bash
 > sh las2pg.sh
