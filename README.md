@@ -2,6 +2,9 @@
 
 Various tools for geodata conversion.
 
+Note that its not fully plug-and-play. Do not be afraid to do some of the dirty
+work.
+
 ## hgt2png
 
 Convert a hgt file (https://dds.cr.usgs.gov/srtm/) to a DEM raster (or
@@ -23,4 +26,34 @@ And finally to retrieve the bounding box:
 
 ```
 > gdalinfo hgt_2154.png
+```
+
+## bin2las
+
+Convert N binary files of pointcloud data into 1 LAS file thanks to the PDAL
+API. By default, the schema is XYZI where each dimension is encoded as float32
+with an offset value.
+
+
+For example (once compiled) with binary files coming from here https://github.com/iTowns/itowns-sample-data/tree/gh-pages/pointclouds/140616/LR:
+
+```
+> bin2las "<BINDIR>/*.bin"  650000.0 6860000.0 0.0 result.las
+```
+
+With these particular data, note that Y and Z are inverted and that a factor
+is applied to the intensity:
+
+```
+Point p;
+p.x = x.f + x_offset;
+p.y = z.f + y_offset;
+p.z = y.f + z_offset;
+p.i = i.f*(-10);
+```
+
+Then you can check your LAS file with the *lasinfo* tool:
+
+```
+> lasinfo result.las
 ```
