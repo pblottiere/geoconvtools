@@ -1,10 +1,10 @@
 # geoconvtools
 
-Various tools for data conversion.
+Various tools for geodata conversion.
 
 ## hgt2png
 
-Convert a hgt file (https://dds.cr.usgs.gov/srtm/) to a DEM png raster (or
+Convert a hgt file (https://dds.cr.usgs.gov/srtm/) to a DEM raster (or
 just display it).
 
 For example:
